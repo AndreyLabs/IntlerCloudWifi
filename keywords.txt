@@ -1,0 +1,26 @@
+#######################################
+# Syntax Coloring Map Servo
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Cloud	KEYWORD1 IntlerCloud
+IntlerCloud KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+connect	KEYWORD2
+run	KEYWORD2
+setInterval	KEYWORD2
+setLogin	KEYWORD2
+setPassword	KEYWORD2
+setDevice	KEYWORD2
+sendValue	KEYWORD2
+addCommand	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
