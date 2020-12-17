@@ -48,6 +48,9 @@ int Cloud::getSecond() {
 }
 
 void Cloud::parseCurrentTime(String data) {
+  if(data == "")
+    return;
+
   String s = data.substring(data.length()-2, data.length());
   String m = data.substring(data.length()-5, data.length()-3);
   String h = data.substring(data.length()-8, data.length()-6);
@@ -206,7 +209,7 @@ void Cloud::connect(const char* ssid, const char* password) {
 }
 
 void Cloud::run() {
-    sendRequest();
+  sendRequest();
 }
 
 void Cloud::parseHttpResponce(String responce) {
@@ -335,5 +338,19 @@ void Cloud::setInterval(int interval) {
     this->interval = 5000;
   else
     this->interval = interval;
+}
 
+bool Cloud::isAnswerRecived() {
+  return !waitResponce;
+}
+
+void Cloud::printLastResponseTime() {
+  Serial.println();
+  Serial.print("Answer recived at: ");
+  Serial.print(getHour());
+  Serial.print(" : ");
+  Serial.print(getMinute());
+  Serial.print(" : ");
+  Serial.print(getSecond());
+  Serial.println();
 }

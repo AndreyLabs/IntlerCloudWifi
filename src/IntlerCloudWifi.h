@@ -4,7 +4,6 @@
 #include <WiFi.h>
 #define DEFAULT_INTERVAL 10000
 #define URL "/send-device-data"
-#define INITURL "/init-data"
 #define SERVER "kvm1.9038221382.mg7dm.vps.myjino.ru"
 
 struct Command {
@@ -44,6 +43,9 @@ class Cloud
     int getHour();
     int getMinute();
     int getSecond();
+    void printLastResponseTime();
+
+    bool isAnswerRecived();
 	
   private:
     String login;

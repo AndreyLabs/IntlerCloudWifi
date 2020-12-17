@@ -5,12 +5,6 @@ Cloud cloud("user", "pass", "myArduino");
 
 void printTemperature(double val) {
   Serial.print("Print temperature " + String(val));
-  Serial.print(", time: ");
-  Serial.print(cloud.getHour());
-  Serial.print(" : ");
-  Serial.print(cloud.getMinute());
-  Serial.print(" : ");
-  Serial.println(cloud.getSecond());
 }
 
 void printLight(double val) {
@@ -31,4 +25,9 @@ void loop()
   cloud.run();
   cloud.sendValue("temperature", temperature);
   cloud.sendValue("light", luminosity);
+
+  if (cloud.isAnswerRecived()) {
+    // Ваш код, выполняющийся когда данные от облака получены, 
+    // а новые данные с платы еще не отправлены
+  }
 }
